@@ -1,0 +1,715 @@
+html,body{
+   -webkit-transition: transform 900ms ease;
+   transition: transform 900ms ease;
+	overflow: hidden;
+	
+	background: linear-gradient(270deg, #b4406a, #a171e9);
+	background-size: 400% 400%;
+	
+	width: auto !important;
+	margin: 0px;
+	font-family: 'Open Sans';
+}
+
+body{
+	position: relative;
+	width: auto;
+	min-width: 800px;
+	height: 100%;
+}
+
+.parallaxBody{
+	height: 100vh;
+	min-height: 650px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-perspective: 300px;
+	perspective: 300px;
+}
+
+.parallaxGroup{
+	position: relative;
+	height: 100vh;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transition: transform 0.5s;
+	min-height: 650px;
+}
+
+.parallaxLayer{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left:0;
+	right:0;
+}
+
+.parallaxContent{
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%,-50%);
+	
+	width: 80%;
+	height: 100%;
+}
+
+.layer0{
+	transform: translateZ(0);
+	z-index: 2;
+}
+
+.layer-1{
+	transform: translateZ(-300px) scale(2);
+	z-index: 3;
+}
+
+.layer-2 {
+  transform: translateZ(-600px) scale(3);
+  z-index:4;
+}
+
+.layer1{
+	transform: translateZ(90px) scale(0.7);
+	z-index: 1;
+}
+
+
+#pageCount{
+	color: white;
+	font-size: 12px;
+	font-weight: normal;
+	
+	position: absolute;
+	right: 10px;
+	bottom:10px;
+	z-index: 100;
+	letter-spacing: 2px;
+	text-shadow: 1px 1px 2px black;
+}
+
+.profileIcon{
+	width: 170px;
+	height: 170px;
+	
+	border: 6px solid rgba(240,240,240,0.92);
+	border-radius: 50%;
+	
+	position: relative;
+	
+	left: -36%;
+	top: -2%;
+	pointer-events: none;
+	z-index: 200;
+	
+
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+.profileIconBottom{
+	width: 150px;
+	height: 150px;
+	
+	border: 5px solid rgba(240,240,240,0.7);
+	border-radius: 8%;
+	
+	position: absolute;
+	
+	left: calc(50% - 75px);
+	left: -webkit-calc(50% - 75px);
+	left: -moz-calc(50% - 75px);
+}
+
+
+.nameText{
+	font-size: 40px;
+	color: white;
+	text-align: center;
+	width: 100%;
+	height: 45%;
+	
+	position: absolute;
+	pointer-events: none;
+	
+	top: 30%;
+	letter-spacing: 5px;
+	text-shadow: 1px 0px 2px rgba(150, 150, 150, 1);
+	z-index: 1;
+	
+}
+
+.nameTextBottom{
+	font-size: 3.6vw;
+	color: white;
+	text-align: center;
+	width: 100%;
+	height: 45%;
+	
+	position: absolute;
+	
+	top: 40px;
+	letter-spacing: 6px;
+	
+}
+
+.topContent{
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top:75%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%,-50%);
+	
+	width: 80%;
+	border: 1px solid gray;
+	border-radius: 12px;
+	padding: 12px;
+	background-color: rgba(30,30,30,0.93);
+}
+
+.rotate {
+  transform: rotate(360deg);
+  -ms-transform: rotate(360deg); /* IE 9 */
+  -moz-transform: rotate(360deg); /* Firefox */
+  -webkit-transform: rotate(360deg); /* Safari and Chrome */
+  -o-transform: rotate(360deg); /* Opera */
+}
+
+
+#nextButton {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	
+	width: 70px;
+	height: 70px;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+#nextButton:hover{
+	opacity: 0.7;
+}
+
+
+.bgTextContent{
+		background-color: rgba(0,0,0,0.4);
+		border-radius: 20px;
+		color: white;
+		border: 1px solid gray;
+}
+
+.bgContentTitle{
+	width: 100%;
+	font-size: 19px;
+	letter-spacing: 3px;
+	margin-top: 6px;
+	text-align: center;
+	font-weight: bold;
+}
+
+
+.bgContentTitleBig{
+	width: 100%;
+	font-size: 2.4vw;
+	letter-spacing: 3px;
+	margin-top: 10px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.bgContentTitle2{
+	width: 100%;
+	font-size: 2.8vw;
+	letter-spacing: 3px;
+	margin-top: 10px;
+	font-weight: bold;
+	text-align: left;
+	padding-left: 17px;
+	margin-bottom: 15px;
+	
+}
+
+.bgContentMain{
+	width: 90%;
+	margin-left:5%;
+	font-size: 1.35vw;
+	letter-spacing: 1px;
+	margin-top: 5px;
+	text-align: justify;
+}
+
+.bgContentMainBig{
+	width: 90%;
+	margin-left:5%;
+	font-size: 1.7vw;
+	letter-spacing: 2px;
+	margin-top: 10px;
+	text-align: justify;
+}
+
+
+#group1{
+	z-index: 5;
+}
+
+#group2{
+	z-index: 3;
+}
+
+#group3{
+	z-index: 4;
+}
+
+#group4{
+	z-index: 2;
+}
+
+#group5{
+	z-index: 3;
+}
+
+#group6{
+	z-index: 2;
+}
+
+#group7{
+	z-index: 3;
+}
+
+#bg1{
+	background-color: black;
+}
+
+#bg2{
+	/*background-image: url("../images/Backgrounds/bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;*/
+	background-color: rgb(230,230,230);
+
+}
+
+
+#bg2Content{
+	width: 40%;
+	min-width: 400px;
+	color: rgb(60,60,60);
+	margin-left: 70%;
+	font-weight: bold;
+	border-left: 1px solid rgb(60,60,60);
+	margin-top: 22%;
+}
+
+#bg3{
+	background-image: url("../images/Backgrounds/bg3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#bg3Content{
+	width: 60%;
+	height: 40%;
+	margin-top: 22%;
+	margin-left: calc(60% - 200px);
+	margin-left: -webkit-calc(60% - 200px);
+	margin-left: -moz-calc(60% - 200px);
+}
+
+#bg4{
+	background-image: url("../images/Backgrounds/bg4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+	background-color: rgb(230,230,230);
+}
+
+#bg5{
+	
+    background-image: -ms-linear-gradient(bottom, rgb(240,240,240) 30%,  #de5c5e 95%);
+    background-image: -moz-linear-gradient(bottom, rgb(240,240,240) 30%,  #de5c5e 95%);
+    background-image: -o-linear-gradient(bottom, rgb(240,240,240) 30%,  #de5c5e 95%);
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(30, rgb(240,240,240)), color-stop(95,  #de5c5e));
+    background-image: -webkit-linear-gradient(bottom, rgb(240,240,240) 30%,  #de5c5e 95%);
+    background-image: linear-gradient(to top, rgb(240,240,240) 30%,  #de5c5e 95%);
+	
+}
+#bg5Content{
+	width: 32%;
+	float: right;
+	margin-right: 15px;
+	margin-top: 70px;
+	
+	color: rgb(65,65,65);
+	font-weight: bold;
+	border-left: 1px solid rgb(60,60,60);
+}
+
+#bg6{
+	/*background-image: url("../images/Backgrounds/bg6.png");
+    background-repeat: no-repeat;
+    background-size: cover; 	background: rgba(206,236,230,1);*/
+
+
+}
+
+#bg6Content{
+	
+}
+
+#bg7{
+	background-image: url("../images/Backgrounds/bg7.png");
+	background-repeat: repeat;
+}
+
+.contentTitle{
+	font-size: 35px;
+	color: white;
+	width: 100%;
+	text-align: center;
+	height:40px;
+	line-height: 40px;
+	letter-spacing: 2px;
+	
+}
+
+.aboutMeTitle{
+	font-size: 32px;
+	color: white;
+	width: 100%;
+	text-align: left;
+	height:40px;
+	line-height: 40px;
+	letter-spacing: 3px;
+	text-shadow: 1px 0px 2px rgba(150, 150, 150, 1);
+	margin-bottom: 5px;
+	margin-top:20px;
+}
+
+.aboutMeCredentials{
+	font-size: 2.4vw;
+	color: white;
+	width: 100%;
+	text-align: center;
+	height:40px;
+	line-height: 40px;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+	
+}
+
+.aboutMeContent{
+	font-size: 25px;
+	color: white;
+	width: 100%;
+	text-align: left;
+	line-height: 30px;
+	letter-spacing: 2px;
+	text-align: justify;
+}
+
+.contentMain{
+	width: 70%;
+	margin-left:15%;
+	color: white;
+	font-size: 25px;
+	margin-top: 20px;
+	letter-spacing: 2px;
+	line-height: 35px;
+	
+}
+
+.divTop{
+	width: 100%;
+	position:relative;
+	left: 0px;
+	top: 0px;
+	height: 100px;
+	z-index: 30;
+}
+
+.topText{
+	font-size: 28px;
+	color: white;
+    text-align: center;
+   	line-height: 40px;
+	float:left;
+	margin-left:140px;
+	margin-top: 58px;
+	text-shadow: 1px 1px #000000;
+	letter-spacing: 2px;
+}
+
+.upButton{
+	visibility: hidden;
+	position: absolute;
+	z-index: 30;
+	width: 35px;
+	right: 55px;
+	top: 30px;
+	opacity: 0;
+	transition: visibility 0.25s, opacity 0.5s linear;
+}
+
+.upButton:hover{
+	opacity: 0.5 !important;
+}
+
+.imageText{
+	font-size: 22px;
+	color: white;
+	width: 80%;
+	margin-left:10%;
+	text-align: justify;
+}
+
+.links{
+	margin-top: 50px;
+}
+
+.icon{
+	display: inline-block;
+	vertical-align: top;
+	overflow: hidden;
+	margin: 4px;
+	width: 10vw;
+	height: 10vw;
+	font-size: 0;
+	text-indent: -9999px;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+.bitBucketIcon{
+	background-image: url("../images/Icons/bitBucketIcon.png");
+	background: url("../images/Icons/bitBucketIcon.png");
+	background-position: 0 0;
+	background-color: #595959;
+	transition: background 0.25s;
+	background-size: cover;
+}
+
+.bitBucketIcon:hover {
+  background-color: #205081;
+  background-position: 0 -114px;
+}
+
+.blogSpotIcon{
+	background-image: url("../images/Icons/blogSpotIcon.png");
+	background: url("../images/Icons/blogSpotIcon.png");
+	background-size: cover;
+	background-position: 0 0;
+	background-color: #595959;
+	transition: background 0.25s;
+}
+
+.blogSpotIcon:hover {
+  background-color: #F67F2A;
+  background-position: 0 -110px;
+}
+
+.gitHubIcon{
+	background-image: url("../images/Icons/gitHubIcon.png");
+	background: url("../images/Icons/gitHubIcon.png");
+	background-size: cover;
+	background-position: 0 0;
+	background-color: #595959;
+	transition: background 0.25s;
+}
+
+.gitHubIcon:hover {
+  background-color: #F3535D;
+  background-position: 0 -108px;
+}
+
+.linkedInIcon{
+	background-image: url("../images/Icons/linkedInIcon.png");
+	background: url("../images/Icons/linkedInIcon.png");
+	background-size: cover;
+	background-position: 0 0;
+	background-color: #595959;
+	transition: background 0.25s;
+}
+
+.linkedInIcon:hover {
+  background-color: #007AB9;
+  background-position: 0 -120px;
+}
+
+
+.skillLists{
+	margin-top: 10px;
+	width: 100%;
+	height: 220px;
+}
+
+.skillList{
+	font-size: 25px;
+	width: 40%;
+	margin-left: 5%;
+	float: left;
+	text-align: left;
+}
+
+li{
+margin-top: 15px;	
+}
+
+
+.no-js #loader { display: none;  }
+
+#loading {
+   width: 100%;
+   height: 100%;
+   top: 0px;
+   left: 0px;
+   position: absolute;
+   display: block;
+   opacity: 0.6;
+   background-color: #fff;
+   z-index: 99;
+   text-align: center;
+}
+
+#loading-image {
+	position: absolute;
+	
+	left: calc(50% - 75px);
+	left: -webkit-calc(50% - 75px);
+	left: -moz-calc(50% - 75px);
+	
+	top: calc(50% - 75px);
+	top: -webkit-calc(50% - 75px);
+	top: -moz-calc(50% - 75px);
+	
+	width: 150px;
+	height: 150px;
+  	z-index: 100;
+}
+
+.close-button{
+	visibility: hidden;
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 12%; /* Specific width is required for Firefox. */
+  max-width: 180px; /* For super large displays*/
+  background: transparent; /* Otherwise white in Chrome */
+  -webkit-transform:rotate(90deg);
+  margin-top: 120px;
+  margin-left: 89%;
+  position: absolute;
+  z-index:10;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 30%;
+  cursor: pointer;
+  -webkit-transform:rotate(90deg);
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 15px;
+  width: 15px;
+  border-radius: 2em;
+  background: rgba(255,255,255, 0.7);
+  cursor: pointer;
+  margin-left: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  border: 1px solid #000000;
+  height: 15px;
+  width: 15px;
+  border-radius: 2em;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  border: 1px solid #000000;
+  height: 15px;
+  width: 15px;
+  border-radius: 2em;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+
+
+
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 60%;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: rgba(100,100,100, 0.8);
+  border-radius: 10px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+   background: rgba(100,100,100, 0.8);
+}
+
+input[type=range]::-moz-range-track {
+  height: 60%;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: rgba(100,100,100, 0.8);
+  border-radius: 10px;
+  border: 0.2px solid #010101;
+}
+
+.slider{
+	position: absolute;
+}
+
+.bg2Icon{
+	width: 77%;
+	margin-left: -70px;
+	margin-top:40px;
+}
+
+.bg6Icon{
+	width: 80%;
+	margin-left: 10%;
+	margin-top:10px;
+}
+
+canvas{
+	z-index: -10;
+	position: fixed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

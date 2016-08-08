@@ -1,0 +1,211 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="Contents/css/style.css">
+<link rel="shortcut icon" href="Contents/images/favicon/favicon.ico" />
+<script src="Contents/three-JS/build/three.min.js"></script>
+<script src='Contents/three-JS/dat.gui.min.js'></script>
+<script src='Contents/three-JS/OrbitControls.js'></script>
+<script src="Contents/javascript/jquery-2.1.4.min.js"></script>
+<script src="Contents/javascript/tween.js"></script>
+<script src="Contents/javascript/scripts.js"></script>
+
+<script type="x-shader/x-vertex" id="vertexshader">
+
+	attribute float alpha;
+
+	varying float vAlpha;
+
+	void main() {
+
+    	vAlpha = alpha;
+
+    	vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+    	gl_PointSize = 10.0;
+
+    	gl_Position = projectionMatrix * mvPosition;
+		
+	}
+
+</script>
+
+<script type="x-shader/x-fragment" id="fragmentshader">
+
+    uniform vec3 color;
+
+    varying float vAlpha;
+
+    void main() {
+
+       gl_FragColor = vec4( color, vAlpha );
+
+    }
+
+</script>
+	
+	<script type="x-shader/x-vertex" id="colorShader">
+
+	    attribute float alpha;
+
+	    varying float vAlpha;
+
+	    void main() {
+
+	        vAlpha = alpha;
+
+	        vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+	        gl_PointSize = 8.0;
+
+	        gl_Position = projectionMatrix * mvPosition;
+
+	    }
+
+	</script>
+
+<title>Ethan Cannon Green</title>
+</head>
+
+<body>
+	
+<div id="loading">
+  <img id="loading-image" src="Contents/images/Icons/pie.gif" alt="Loading..." />
+</div>
+
+<div class="parallaxBody">
+
+	<div class="parallaxGroup" id="group1">
+		
+		<div class="parallaxLayer layer0" id="bg1">
+			
+			<input class="slider" id="slider" min="10" max="170" value="10" step="2" oninput="changeZoom(this.value)" type="range" orient="vertical" />
+			<div class="nameText"> 				
+				<img class="profileIcon" id="topIcon" src="Contents/images/Icons/icon.jpg">
+				<div class="topContent"> 	
+					<div>
+						
+						<div>Ethan Cannon Green </div>
+						<div class="aboutMeTitle">Hello everyone,</div>
+						<div class="aboutMeContent"> I'm a full stack software engineer located in the Bay Area. I love designing fluid mobile and web applications. I currently work on a variety of applications from native iOS and Apple Watch applications to a cloud based electronic health record system. I'm interested in further pursuing my passion for web and front-end design.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>		
+		
+		
+	<div class="parallaxGroup" id="group2">
+		
+		<div class="parallaxLayer layer0">
+		 <img class="bg2Icon" src="Contents/images/Icons/caseExchange.png">	
+		</div>
+		<div class="parallaxLayer layer-1" id="bg2">
+			<div class="parallaxContent">
+ 			<div id="bg2Content"> 
+ 				<div class="bgContentTitle2"> Design Fundamentals </div>
+ 				<div class="bgContentMainBig">
+ 					Design is far more than just the look of an application. When I redesigned this web app, I updated it with modern styling, but I put even more effort into reworking user interactions through animations to make it feel simple and natural to use.
+ 				</div>
+			</div>
+ 			</div>
+		</div>
+	</div>	
+		
+	
+	
+	<div class="parallaxGroup" id="group3">
+		<div class="parallaxLayer layer1">
+			<div class="parallaxContent"> 
+				<div class="bgTextContent" id="bg3Content">
+					<div class="bgContentTitleBig"> Custom User Experiences  </div>
+					<div class="bgContentMainBig" id="bgText3">
+						User interfaces should be intuitive, but they should also be unique. In this application most of the functionality was on a single tab. I created a custom bar with a raised and rounded center button so the user is directed to the most important page of the application - exploring user generated geolocations.
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="parallaxLayer layer0"  id="bg3">
+		</div>
+		
+	</div>
+		
+	
+	
+	<div class="parallaxGroup" id="group4">
+		
+		<div class="parallaxLayer layer0">
+			<div class="parallaxContent"> 
+				<div class="bgTextContent" id="bg3Content">
+					<div class="bgContentTitleBig"> Unique Designs</div>
+					<div class="bgContentMainBig" id="bgText4">
+						Sometimes a simple UI element can be extended to do far more in an application that is typical. While building this iPhone application, I saw an opportunity to make the calendar the center piece of user interaction. The calendar displays what days a test was completed by circling the date, and gives an idea of the result based on the color of the circle.
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="parallaxLayer layer-2" id="bg4">
+		</div>
+		
+	</div>	
+		
+	
+	<<div class="parallaxGroup" id="group5">
+		<div class="parallaxLayer layer0" id="bg5">
+			
+			<div id="bg5Content">
+				<div class="bgContentTitle2"> Icons and Logos </div>
+				<div class="bgContentMainBig" id="bgText4">
+					For the Ninja Team I helped improve their existing website by helping them create a theme, fixing the website sizing and layout, and developing a logo with a number of accompanying icons.
+				</div>
+			</div>
+		</div>
+		
+		<div class="parallaxLayer layer1">
+			<img class="bg6Icon" src="Contents/images/Icons/bg6-Icon.png">
+		</div>
+		
+	</div>
+		
+	
+	
+	<div class="parallaxGroup" id="group6">
+		<div class="parallaxLayer layer0" id="bg7">
+				<div class="nameTextBottom"> 
+					<div> Ethan Cannon Green </div>
+					<div class="aboutMeCredentials" style="margin-top: 15px;">ethan.c.green@gmail.com &bull; (615) 497-6903</div>
+					<div class="aboutMeCredentials">Washington University in St. Louis, B.S. & M.S. Computer Science</div>
+					
+					<div class="skillLists">
+						<ul class="skillList">
+							<li>HTML/CSS/Javascript - 4 Years</li>
+							<li>Android - 2 Years</li>
+							<li>MySQL and PHP - 2.5 years</li>
+						</ul>
+						
+						<ul class="skillList">
+							<li>Java - 5 Years</li>
+							<li>iOS (Swift and Obj-C) - 2 Years</li>
+							<li>Linux / Unix / EC2 - 5 Years</li>
+						</ul>
+					</div>
+					
+					<div class="links">
+						<a href="https://bitbucket.org/ecgreen/" class="icon bitBucketIcon"> BitBucket </a>
+						<a href="http://ethancgreen.blogspot.com/" class="icon blogSpotIcon"> BlogSpot </a>
+						<a href="https://github.com/ecgreen" class="icon gitHubIcon"> GitHub </a>
+						<a href="https://www.linkedin.com/in/ethancgreen" class="icon linkedInIcon"> LinkedIn </a>
+					</div>
+				</div>
+				
+			</div>
+	</div>
+		
+
+	
+</div>
+	
+	
+</body>
+</html>
